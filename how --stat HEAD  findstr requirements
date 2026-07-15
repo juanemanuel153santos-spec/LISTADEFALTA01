@@ -1,0 +1,33 @@
+[33mcommit 856d212fed8310cfc02c0f0083309c86d2643caf[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m)[m
+Author: juanemanuel153santos-spec <juanemanuel153santos@gmail.com>
+Date:   Tue Jul 14 15:29:12 2026 -0300
+
+    primeiro commit
+
+ manage.py                                          |  22 [32m++++[m
+ motopecas/__init__.py                              |   0
+ motopecas/asgi.py                                  |  16 [32m+++[m
+ motopecas/settings.py                              | 117 [32m+++++++++++++++++[m
+ motopecas/urls.py                                  |  22 [32m++++[m
+ motopecas/wsgi.py                                  |  16 [32m+++[m
+ oficina/README.md                                  | 104 [32m+++++++++++++++[m
+ oficina/__init__.py                                |   0
+ oficina/admin.py                                   |  27 [32m++++[m
+ oficina/apps.py                                    |   6 [32m+[m
+ oficina/forms.py                                   |  45 [32m+++++++[m
+ oficina/models.py                                  |  65 [32m+++++++++[m
+ oficina/static/oficina/js/main.js                  |  45 [32m+++++++[m
+ .../templates/oficina/aguardando_aprovacao.html    |   6 [32m+[m
+ oficina/templates/oficina/base.html                |  36 [32m+++++[m
+ oficina/templates/oficina/cadastro.html            |  11 [32m++[m
+ oficina/templates/oficina/dashboard.html           |  12 [32m++[m
+ oficina/templates/oficina/falta_form.html          |  10 [32m++[m
+ oficina/templates/oficina/lista_falta.html         |  35 [32m+++++[m
+ oficina/templates/oficina/lista_maodeobra.html     |  30 [32m+++++[m
+ oficina/templates/oficina/lista_pecas.html         |  31 [32m+++++[m
+ oficina/templates/oficina/maodeobra_form.html      |  10 [32m++[m
+ oficina/templates/oficina/peca_form.html           |  10 [32m++[m
+ oficina/templates/registration/login.html          |  11 [32m++[m
+ oficina/urls.py                                    |  21 [32m+++[m
+ oficina/views.py                                   | 146 [32m+++++++++++++++++++++[m
+ 26 files changed, 854 insertions(+)
