@@ -1,0 +1,343 @@
+/* ============================================
+   OFICINA - CSS BASE
+   Cole este arquivo em: motopecas/oficina/static/css/style.css
+   (ou na pasta static do seu app)
+   ============================================ */
+
+:root {
+  --cor-primaria: #2563eb;
+  --cor-primaria-escura: #1d4ed8;
+  --cor-sucesso: #16a34a;
+  --cor-sucesso-clara: #dcfce7;
+  --cor-perigo: #dc2626;
+  --cor-perigo-clara: #fee2e2;
+  --cor-aviso: #d97706;
+  --cor-aviso-clara: #fef3c7;
+  --cor-fundo: #f5f6fa;
+  --cor-texto: #1f2937;
+  --cor-texto-suave: #6b7280;
+  --cor-borda: #e5e7eb;
+  --cor-card: #ffffff;
+  --sombra: 0 1px 3px rgba(0, 0, 0, 0.08);
+  --sombra-hover: 0 4px 12px rgba(0, 0, 0, 0.1);
+  --raio: 8px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--cor-fundo);
+  color: var(--cor-texto);
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  margin: 0;
+  padding: 0;
+  line-height: 1.5;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 24px 16px;
+}
+
+h1, h2, h3 {
+  color: var(--cor-texto);
+  font-weight: 600;
+}
+
+h1 {
+  font-size: 1.6rem;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* ===== CAIXA DE BUSCA ===== */
+.busca-wrapper {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.busca-input {
+  width: 100%;
+  padding: 12px 40px 12px 16px;
+  font-size: 1rem;
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--raio);
+  background: var(--cor-card);
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+
+.busca-input:focus {
+  outline: none;
+  border-color: var(--cor-primaria);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+}
+
+.busca-icone {
+  position: absolute;
+  right: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--cor-texto-suave);
+  pointer-events: none;
+}
+
+/* ===== CARD / PAINEL ===== */
+.card {
+  background: var(--cor-card);
+  border-radius: var(--raio);
+  box-shadow: var(--sombra);
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+/* ===== TABELA ===== */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--cor-card);
+  border-radius: var(--raio);
+  overflow: hidden;
+}
+
+thead th {
+  background: #f9fafb;
+  color: var(--cor-texto-suave);
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 0.03em;
+  text-align: left;
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--cor-borda);
+}
+
+tbody td {
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--cor-borda);
+  font-size: 0.95rem;
+}
+
+tbody tr {
+  transition: background 0.12s;
+}
+
+tbody tr:hover {
+  background: #f9fafb;
+}
+
+tbody tr:last-child td {
+  border-bottom: none;
+}
+
+/* linha escondida pela busca */
+tr.linha-oculta {
+  display: none;
+}
+
+/* destaque do termo buscado */
+mark {
+  background: #fef08a;
+  padding: 0 2px;
+  border-radius: 2px;
+}
+
+/* ===== BADGES DE STATUS ===== */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 0.78rem;
+  font-weight: 600;
+}
+
+.badge-sucesso {
+  background: var(--cor-sucesso-clara);
+  color: var(--cor-sucesso);
+}
+
+.badge-perigo {
+  background: var(--cor-perigo-clara);
+  color: var(--cor-perigo);
+}
+
+.badge-aviso {
+  background: var(--cor-aviso-clara);
+  color: var(--cor-aviso);
+}
+
+/* ===== BOTÕES ===== */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  border: none;
+  border-radius: var(--raio);
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s, transform 0.05s;
+}
+
+.btn:active {
+  transform: scale(0.97);
+}
+
+.btn-primario {
+  background: var(--cor-primaria);
+  color: #fff;
+}
+
+.btn-primario:hover {
+  background: var(--cor-primaria-escura);
+}
+
+.btn-sucesso {
+  background: var(--cor-sucesso);
+  color: #fff;
+}
+
+.btn-sucesso:hover {
+  background: #15803d;
+}
+
+.btn-perigo {
+  background: var(--cor-perigo);
+  color: #fff;
+}
+
+.btn-perigo:hover {
+  background: #b91c1c;
+}
+
+/* ===== CAMPO INVÁLIDO (quantidade zero/negativa) ===== */
+.input-erro {
+  border: 1px solid var(--cor-perigo) !important;
+  background: var(--cor-perigo-clara);
+}
+
+.mensagem-erro {
+  color: var(--cor-perigo);
+  font-size: 0.82rem;
+  margin-top: 4px;
+  display: none;
+}
+
+.mensagem-erro.visivel {
+  display: block;
+}
+
+/* ===== MODAL DE CONFIRMAÇÃO ===== */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(17, 24, 39, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.15s;
+}
+
+.modal-overlay.aberto {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.modal-caixa {
+  background: var(--cor-card);
+  border-radius: var(--raio);
+  padding: 24px;
+  max-width: 380px;
+  width: 90%;
+  box-shadow: var(--sombra-hover);
+  transform: translateY(10px);
+  transition: transform 0.15s;
+}
+
+.modal-overlay.aberto .modal-caixa {
+  transform: translateY(0);
+}
+
+.modal-titulo {
+  font-size: 1.05rem;
+  font-weight: 600;
+  margin: 0 0 8px;
+}
+
+.modal-texto {
+  color: var(--cor-texto-suave);
+  font-size: 0.9rem;
+  margin-bottom: 18px;
+}
+
+.modal-acoes {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
+/* ===== TOAST (aviso rápido no canto) ===== */
+.toast {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: var(--cor-texto);
+  color: #fff;
+  padding: 12px 18px;
+  border-radius: var(--raio);
+  font-size: 0.9rem;
+  box-shadow: var(--sombra-hover);
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.2s, transform 0.2s;
+  z-index: 1100;
+}
+
+.toast.visivel {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.toast.sucesso {
+  background: var(--cor-sucesso);
+}
+
+.toast.erro {
+  background: var(--cor-perigo);
+}
+
+/* ===== RESPONSIVO ===== */
+@media (max-width: 640px) {
+  table, thead, tbody, th, td, tr {
+    display: block;
+  }
+  thead {
+    display: none;
+  }
+  tbody tr {
+    margin-bottom: 12px;
+    border: 1px solid var(--cor-borda);
+    border-radius: var(--raio);
+    padding: 8px 0;
+  }
+  tbody td {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    border-bottom: 1px solid #f1f1f1;
+  }
+  tbody td::before {
+    content: attr(data-label);
+    font-weight: 600;
+    color: var(--cor-texto-suave);
+  }
+}

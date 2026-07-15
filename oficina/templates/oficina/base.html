@@ -1,0 +1,39 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block titulo %}Sistema Motopeças{% endblock %}</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 700px; margin: 40px auto; padding: 0 16px; }
+        nav a { margin-right: 12px; }
+        .msg { padding: 8px; background: #e6ffe6; border: 1px solid #99cc99; margin-bottom: 12px; }
+        table { border-collapse: collapse; width: 100%; margin-top: 12px; }
+        th, td { border: 1px solid #ccc; padding: 6px 10px; text-align: left; }
+        form p { margin: 8px 0; }
+    </style>
+    {% load static %}
+<link rel="stylesheet" href="{% static 'oficina/style/style.css' %}">
+</head>
+<body>
+    {% if user.is_authenticated %}
+    <nav>
+        <a href="{% url 'dashboard' %}">Início</a>
+        <a href="{% url 'lista_pecas' %}">Peças</a>
+        <a href="{% url 'lista_maodeobra' %}">Mão de obra</a>
+        <a href="{% url 'lista_falta' %}">Peças em falta</a>
+        <a href="{% url 'logout' %}">Sair ({{ user.username }})</a>
+    </nav>
+    <hr>
+    {% endif %}
+
+    {% for message in messages %}
+        <div class="msg">{{ message }}</div>
+    {% endfor %}
+
+    {% block conteudo %}{% endblock %}
+
+    <script src="{% static 'oficina/js/main.js' %}"></script>
+<script src="{% static 'oficina/js/ui-enhancements.js' %}"></script>
+</body>
+</html>

@@ -1,0 +1,10 @@
+{% extends 'oficina/base.html' %}
+{% block titulo %}Cadastrar mão de obra{% endblock %}
+{% block conteudo %}
+    <h1>Cadastrar mão de obra</h1>
+    <form method="post" data-validar>
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Salvar</button>
+    </form>
+{% endblock %}

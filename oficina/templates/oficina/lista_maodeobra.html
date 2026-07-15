@@ -1,0 +1,30 @@
+{% extends 'oficina/base.html' %}
+{% block titulo %}Mão de obra{% endblock %}
+{% block conteudo %}
+    <h1>Mão de obra cadastrada</h1>
+    <p><a href="{% url 'cadastrar_maodeobra' %}">+ Nova mão de obra</a></p>
+
+    <p>
+        <input type="text" placeholder="Buscar..." oninput="filtrarTabela(this, 'tabela-maodeobra')">
+    </p>
+
+    <table id="tabela-maodeobra">
+        <thead>
+        <tr>
+            <th>Descrição</th><th>Valor</th><th>Cadastrado por</th><th>Data</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for item in itens %}
+        <tr>
+            <td>{{ item.descricao }}</td>
+            <td>R$ {{ item.valor }}</td>
+            <td>{{ item.cadastrado_por.username }}</td>
+            <td>{{ item.data_cadastro|date:"d/m/Y H:i" }}</td>
+        </tr>
+        {% empty %}
+        <tr><td colspan="4">Nenhuma mão de obra cadastrada ainda.</td></tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

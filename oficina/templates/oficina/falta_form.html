@@ -1,0 +1,10 @@
+{% extends 'oficina/base.html' %}
+{% block titulo %}Adicionar peça em falta{% endblock %}
+{% block conteudo %}
+    <h1>Adicionar peça em falta</h1>
+    <form method="post" data-validar>
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Salvar</button>
+    </form>
+{% endblock %}

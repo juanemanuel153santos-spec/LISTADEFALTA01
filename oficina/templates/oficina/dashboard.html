@@ -1,0 +1,12 @@
+{% extends 'oficina/base.html' %}
+{% block titulo %}Início{% endblock %}
+{% block conteudo %}
+    <h1>Olá, {{ user.username }}!</h1>
+    <p>Você está logado como <strong>{{ tipo }}</strong>.</p>
+
+    {% if tipo == 'mecanico' %}
+        <p><a href="{% url 'cadastrar_peca' %}">+ Cadastrar peça</a></p>
+        <p><a href="{% url 'cadastrar_maodeobra' %}">+ Cadastrar mão de obra</a></p>
+    {% endif %}
+    <p><a href="{% url 'cadastrar_falta' %}">+ Adicionar item na lista de falta</a></p>
+{% endblock %}
